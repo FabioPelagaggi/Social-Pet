@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation.xml"
+    app:startDestination="@id/splashScreenFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="vortex.project.unify.Views.ui.Activity.Fragment.LoginFragment"
+        android:label="SignIn"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_postFragment"
+            app:destination="@id/home_dest" />
+        <action
+            android:id="@+id/action_loginFragment_to_forgotPasswordFragment"
+            app:destination="@id/forgotPasswordFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_regPetFragment"
+            app:destination="@id/regPetFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/home_dest"
+        android:name="vortex.project.unify.Views.ui.Activity.Fragment.Main.FeedFragment"
+        android:label="SocialPet"
+        tools:layout="@layout/fragment_feed" >
+        <action
+            android:id="@+id/action_home_dest_to_profile_dest"
+            app:destination="@id/profile_dest" />
+        <action
+            android:id="@+id/action_home_dest_to_addPostFragment"
+            app:destination="@id/addPostFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/forgotPasswordFragment"
+        android:name="vortex.project.unify.Views.ui.Activity.Fragment.ForgotPasswordFragment"
+        android:label="Forgot Password"
+        tools:layout="@layout/fragment_forgot_password" />
+    <fragment
+        android:id="@+id/nav_preferences"
+        android:name="vortex.project.unify.Views.ui.Activity.Fragment.Main.PreferencesFragment"
+        android:label="Preferences"
+        tools:layout="@layout/fragment_preferences" >
+        <action
+            android:id="@+id/action_nav_preferences_to_customLanguageDialogFragment"
+            app:destination="@id/customLanguageDialogFragment" />
+        <action
+            android:id="@+id/action_nav_preferences_to_profile_dest"
+            app:destination="@id/profile_dest" />
+    </fragment>
+    <fragment
+        android:id="@+id/profile_dest"
+        android:name="vortex.project.unify.Views.ui.Activity.Fragment.Main.ProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profile_dest_to_home_dest"
+            app:destination="@id/home_dest" />
+        <action
+            android:id="@+id/action_profile_dest_to_nav_preferences"
+            app:destination="@id/nav_preferences" />
+        <action
+            android:id="@+id/action_profile_dest_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/regEmail"
+        android:name="vortex.project.unify.Views.ui.Activity.Fragment.Register.RegEmailFragment"
+        android:label="Your email"
+        tools:layout="@layout/fragment_reg_email" >
+        <action
+            android:id="@+id/action_reg_email_to_reg_phone"
+            app:destination="@id/regPhone" />
+    </fragment>
+    <fragment
+        android:id="@+id/regPhone"
+        android:name="vortex.project.unify.Views.ui.Activity.Fragment.Register.RegPhoneFragment"
+        android:label="Your phone"
+        tools:layout="@layout/fragment_reg_phone" >
+        <action
+            android:id="@+id/action_reg_phone_to_reg_password"
+            app:destination="@id/regPassword" />
+    </fragment>
+    <fragment
+        android:id="@+id/regPassword"
+        android:name="vortex.project.unify.Views.ui.Activity.Fragment.Register.RegPasswordFragment"
+        android:label="Your password"
+        tools:layout="@layout/fragment_reg_password" >
+        <action
+            android:id="@+id/action_reg_password_to_login"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/myPets_dest"
+        android:name="vortex.project.unify.Views.ui.Activity.Fragment.Main.MyPetsFragment"
+        android:label="My Pets"
+        tools:layout="@layout/fragment_my_pets" >
+        <action
+            android:id="@+id/action_myPets_dest_to_addPetFragment"
+            app:destination="@id/addPetFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/likes_dest"
+        android:name="vortex.project.unify.Views.ui.Activity.Fragment.Main.LikesFragment"
+        android:label="Likes"
+        tools:layout="@layout/fragment_likes" />
+    <fragment
+        android:id="@+id/search_dest"
+        android:name="vortex.project.unify.Views.ui.Activity.Fragment.Main.SearchFragment"
+        android:label="Search"
+        tools:layout="@layout/fragment_search" />
+    <fragment
+        android:id="@+id/new_fallowers_dest"
+        android:name="vortex.project.unify.Views.ui.Activity.Fragment.Main.NewFollowersFragment"
+        android:label="Fallowers"
+        tools:layout="@layout/fragment_new_followers" />
+    <fragment
+        android:id="@+id/regPetFragment"
+        android:name="vortex.project.unify.Views.ui.Activity.Fragment.Register.RegPetFragment"
+        android:label="Register Your Pet"
+        tools:layout="@layout/fragment_reg_pet" >
+        <action
+            android:id="@+id/action_regPetFragment_to_regEmail"
+            app:destination="@id/regEmail" />
+    </fragment>
+    <fragment
+        android:id="@+id/addPetFragment"
+        android:name="vortex.project.unify.Views.ui.Activity.Fragment.Register.AddPetFragment"
+        android:label="Add your pet"
+        tools:layout="@layout/fragment_add_pet" >
+        <action
+            android:id="@+id/action_addPetFragment_to_myPets_dest"
+            app:destination="@id/myPets_dest" />
+    </fragment>
+    <fragment
+        android:id="@+id/customLanguageDialogFragment"
+        android:name="vortex.project.unify.Views.ui.Activity.Fragment.CustomLanguageDialogFragment"
+        android:label="fragment_custom_language_dialog"
+        tools:layout="@layout/fragment_custom_language_dialog" >
+        <action
+            android:id="@+id/action_customLanguageDialogFragment_to_nav_preferences"
+            app:destination="@id/nav_preferences" />
+    </fragment>
+    <fragment
+        android:id="@+id/addPostFragment"
+        android:name="vortex.project.unify.Views.ui.Activity.Fragment.Register.AddPostFragment"
+        android:label="Add your post"
+        tools:layout="@layout/fragment_add_post" >
+        <action
+            android:id="@+id/action_addPostFragment_to_home_dest"
+            app:destination="@id/home_dest" />
+    </fragment>
+    <fragment
+        android:id="@+id/splashScreenFragment"
+        android:name="vortex.project.unify.Views.ui.Activity.Fragment.Main.SplashScreenFragment"
+        android:label="fragment_splash_screen"
+        tools:layout="@layout/fragment_splash_screen" >
+        <action
+            android:id="@+id/action_splashScreenFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+</navigation>

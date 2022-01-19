@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorSurface"
+    tools:context=".Views.ui.Activity.Fragment.Main.ProfileFragment">
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="62dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/userPosts_recyclerView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardView_profile"
+                tools:listitem="@layout/profile_card" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView_profile"
+                android:layout_width="350dp"
+                android:layout_height="160dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/tv_pet_photo_profile"
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginTop="16dp"
+                        android:src="@drawable/ic_launcher_background"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <LinearLayout
+                        android:id="@+id/layout_info_user"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:orientation="vertical"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_pet_photo_profile"
+                        app:layout_constraintStart_toEndOf="@+id/tv_pet_photo_profile"
+                        app:layout_constraintTop_toTopOf="@+id/tv_pet_photo_profile">
+
+                        <TextView
+                            android:id="@+id/tv_pets_name_profile"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/pet_s_name"
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tv_bio"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/bio"
+                            android:textColor="?attr/colorOnSecondary" />
+
+                        <TextView
+                            android:id="@+id/tv_bio2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="?attr/colorOnSecondary" />
+
+                        <TextView
+                            android:id="@+id/tv_bio3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="?attr/colorOnSecondary" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/layout_posts"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:orientation="vertical"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/layout_fallowers"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_pet_photo_profile">
+
+                        <TextView
+                            android:id="@+id/label_posts"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/posts"
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tv_num_posts"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="0"
+                            android:textColor="?attr/colorOnSecondary" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/layout_fallowers"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:orientation="vertical"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/layout_following"
+                        app:layout_constraintStart_toEndOf="@+id/layout_posts"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_pet_photo_profile">
+
+                        <TextView
+                            android:id="@+id/label_fallowers"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/followers"
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tv_num_fallowers"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="0"
+                            android:textColor="?attr/colorOnSecondary" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/layout_following"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:orientation="vertical"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/layout_fallowers"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_pet_photo_profile">
+
+                        <TextView
+                            android:id="@+id/label_following"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/following"
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tv_num_following"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="0"
+                            android:textColor="?attr/colorOnSecondary" />
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/divider"
+                        android:layout_width="1dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:background="?android:attr/listDivider"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/layout_fallowers"
+                        app:layout_constraintStart_toEndOf="@+id/layout_posts"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_pet_photo_profile" />
+
+                    <View
+                        android:id="@+id/divider2"
+                        android:layout_width="1dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:background="?android:attr/listDivider"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/layout_following"
+                        app:layout_constraintStart_toEndOf="@+id/layout_fallowers"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_pet_photo_profile" />
+
+                    <Button
+                        android:id="@+id/btn_follow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:backgroundTint="@color/orange_400"
+                        android:insetLeft="6dp"
+                        android:insetRight="6dp"
+                        android:text="@string/follow"
+                        android:textColor="@color/white"
+                        android:textSize="10sp"
+                        app:cornerRadius="10dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
